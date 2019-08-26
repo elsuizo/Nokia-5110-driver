@@ -22,7 +22,7 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License
 ---------------------------------------------------------------------------*/
 #include "sapi.h"
-#include "lcd_nokia_5110.h"
+#include "../inc/lcd_nokia_5110.h"
 
 /* NOTE(elsuizo:2019-08-22): anduvo el hola mundo */
 
@@ -31,12 +31,13 @@ int main(void) {
    /* initializations */
    boardConfig();
    bool_t result = lcd_nokia_5110_init();
+   if (!result) {
+      return(-1);
+   }
    /* NOTE(elsuizo:2019-08-22): este clear es importante */
    lcd_nokia_5110_clear();
 
    while(1) {
-      for (int index = 0; index < 20; index++) {
-         lcd_nokia_5110_write("Martin Noblia", 0, index);
-      }
+      lcd_nokia_5110_write("Hello World", 10, 1);
    }
 }

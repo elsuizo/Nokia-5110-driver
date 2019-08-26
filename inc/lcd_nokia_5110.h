@@ -56,7 +56,7 @@ enum BYTE_ENCODING_TYPES {
    MSBFIRST
 };
 
-enum INTRUCTIONS {
+enum LCD_INTRUCTIONS {
    FUNCTION_SET            = SET_BIT(5), /* set the bit 5 to begins table 1 */
    EXTENDED_FUNCTION_SET   = FUNCTION_SET | SET_BIT(0), /* for set the extendend set of instructions */
    BASIC_FUNCTION_SET      = FUNCTION_SET, /* set H to low */
@@ -79,9 +79,6 @@ void lcd_nokia_5110_send_character(char c);
 
 void lcd_nokia_5110_clear(void);
 
-// void lcd_write(const char* message);
 void lcd_nokia_5110_write(const char* message, uint8_t position_x, uint8_t position_y);
 
 void lcd_nokia_5110_set_contrast(uint8_t constrast_value);
-
-

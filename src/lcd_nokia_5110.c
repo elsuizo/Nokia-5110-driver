@@ -22,7 +22,7 @@ General Public License for more details.
 You should have received a copy of the GNU General Public License
 ---------------------------------------------------------------------------*/
 /* includes */
-#include "lcd_nokia_5110.h"
+#include "../inc/lcd_nokia_5110.h"
 
 static const uint8_t DICTIONARY[][5] =
 {
@@ -200,7 +200,7 @@ bool_t lcd_nokia_5110_init(void) {
    /* initialization */
    /* RES pulse for reset function */
    gpioWrite(LCD_PIN_RES, LOW);
-   delay(3);
+   delay(1);
    gpioWrite(LCD_PIN_RES, HIGH);
    /* initialization functions */
    send_command(EXTENDED_FUNCTION_SET); /* use extended functions set */
